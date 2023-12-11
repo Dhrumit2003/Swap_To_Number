@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Swap Variables</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Swap Two Variables</h2>
+    <label for="firstNumber">Enter first number:</label>
+    <input type="number" id="firstNumber" /><br /><br />
+    <label for="secondNumber">Enter second number:</label>
+    <input type="number" id="secondNumber" /><br /><br />
+    <button onclick="swapVariables()">Swap</button><br /><br />
+    <p id="beforeSwap"></p>
+    <p id="afterSwap"></p>
+
+    <script>
+      function swapVariables() {
+        var firstNumber = parseFloat(
+          document.getElementById("firstNumber").value
+        );
+        var secondNumber = parseFloat(
+          document.getElementById("secondNumber").value
+        );
+
+        document.getElementById(
+          "beforeSwap"
+        ).innerHTML = `Before swapping: First Number = ${firstNumber}, Second Number = ${secondNumber}`;
+
+        var temp = firstNumber;
+        firstNumber = secondNumber;
+        secondNumber = temp;
+
+        document.getElementById(
+          "afterSwap"
+        ).innerHTML = `After swapping: First Number = ${firstNumber}, Second Number = ${secondNumber}`;
+      }
+    </script>
+  </body>
+</html>
